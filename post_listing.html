@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post Listing</title>
+  <meta charset="UTF-8">
+  <script src="post_listing.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    select, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+    
+    .error-message {
+      color: red;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Post Listing</h1>
+
+  <form id="listingForm">
+    <label for="listingType">გარიგების ტიპი:</label>
+    <select name="listingType" id="listingType">
+      <option value="იყიდება">იყიდება</option>
+      <option value="გირავდება">გირავდება</option>
+      <option value="ქირავდება">ქირავდება</option>
+      <option value="ქირავდებადღიურად">ქირავდება დღიურად</option>
+    </select>
+  <br>
+    <label for="propertyType">უძრავი ქონების ტიპი:</label>
+    <select name="propertyType" id="propertyType">
+      <option value="ბინა">ბინები</option>
+      <option value="სახლი">კერძო სახლი</option>
+      <option value="აგარაკი">აგარაკი</option>
+      <option value="კომერციული">კომერციული ფართები</option>
+      <option value="მიწა">მიწის ნაკვეთები</option>
+      <option value="სასტუმრო">სასტუმროები</option>
+    </select>
+    <br>
+    <label for="buildType">მშენებლობის სტატუსი</label>
+    <select name="buildType" id="buildType">
+      <option value="ძველი">ძველი აშენებული</option>
+      <option value="ახალი">ახალი აშენებული</option>
+      <option value="მშენებარე">მშენებარე</option>
+    </select>
+    <br>
+    <label for="city">ქალაქი / რაიონი:</label>
+    <select id="location_select" required="" name="params[selects][]">
+      <option value="0">ქალაქი / რაიონი</option>
+      <optgroup label="თბილისი">
+        <option value="გლდანი">გლდანი</option>
+        <option value="ნაძალადევი">ნაძალადევი</option>
+        <option value="ისანი">ისანი</option>აწ
+        <option value="სამგორი">სამგორი</option>
+        <option value="დიდუბე">დიდუბე</option>
+        <option value="ჩუღურეთი">ჩუღურეთი</option>
+        <option value="ვაკე">ვაკე</option>
+        <option value="საბურთალო">საბურთალო</option>
+        <option value="კრწანისი">კრწანისი</option>
+        <option value="მთაწმინდა">მთაწმინდა</option>
+      </optgroup>
+      <option value="ქუთაისი">ქუთაისი</option>
+      <option value="ბათუმი">ბათუმი</option>
+      <option value="ცხინვალი">ცხინვალი</option>
+      <option value="რუსთავი">რუსთავი</option>
+      <option value="ფოთი">ფოთი</option>
+    </select>
+    <br>
+    <label for="address">მისამართი:</label>
+    <input type="text" id="address" name="address"><br>
+    <label for="floor">სართული:</label>
+    <input type="number" id="floor" name="floor"><br>
+    <label for="floor">სართულები სულ:</label>
+    <input type="number" id="floor" name="floor"><br>
+    <label for="rooms">ოთახები:</label>
+    <input type="number" id="rooms" name="rooms"><br>
+    <label for="priceM2">ფასი მ2:</label>
+    <input type="number" id="priceM2" name="priceM2"><br>
+    <label for="priceFull">ფასი:</label>
+    <input type="number" id="priceFull" name="priceFull"><br>
+    <label for="comment">კომენტარი:</label>
+    <textarea id="comment" name="comment"></textarea><br>
+    <button type="submit" id="submitListing">შენახვა</button>
+  </form>
+
+  <script src="post_listing.js"></script>
+</body>
+</html>

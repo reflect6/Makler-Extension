@@ -1,0 +1,30 @@
+{
+      "name": "Real Estate Helper GE",
+      "version": "1.0",
+      "manifest_version": 2,
+      "description": "ეს ექთენშენი დაეხმარება უძრავი ქონების აგენტებს (მაკლერებს) რომ მარტივად შეძლონ განცხადებების დადება მარტივად - ერთი დაჭერით, ყველა ცნობილ უძრავი ქონების საიტსა თუ ფეისბუქ ჯგუფებში",
+      "icons": {
+        "16": "16.png",
+        "48": "48.png",
+        "128": "128.png"
+      },
+    
+      "permissions": [
+        "storage",
+        "activeTab",
+        "https://*/*",
+        "http://*/*"
+      ],
+
+      "browser_action": {
+        "default_icon": "128.png",
+        "default_popup": "popupMain.html",
+        "default_popup_width": 800,
+        "default_popup_height": 800
+      },
+    
+      "background": {
+        "scripts": ["backgroundScript.js"],
+        "persistent": false
+      }
+    }

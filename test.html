@@ -1,0 +1,503 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <div style="background: #fff;padding: 10px;">
+              <form id="form">
+                <input type="hidden" name="_token" value="RitqTaXINcfyGxNEQT60bsFM6hGqekVf4UoTcLpd">
+                <h3>განცხადების ტიპი</h3>
+                <div>
+                  <div id="select_days">
+                    <div style="color: white; font-size: 15px; background: #c30b0b; padding: 4px; font-family: bpg_rioni; text-align: center;">
+                      <span id="selected_days"></span> დღიანი განცხადების საფასურია: <span id="selected_days_price"></span> ₾
+                    </div>
+                  </div>
+                  <label>ხანგრძლივობა (დღე) :</label>
+                  <div>
+                    <label>50</label>
+                  </div>
+                </div>
+                <div>
+                  <label>გარიგების ტიპი :</label>
+                  <div>
+                    <select name="params[selects][]">
+                      <option value="1">იყიდება</option>
+                      <option value="2">გირავდება</option>
+                      <option value="3">ქირავდება</option>
+                      <option value="4">ქირავდება დღიურად</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label>უძრავი ქონების ტიპი :</label>
+                  <div>
+                    <select name="params[selects][]">
+                      <option value="985">ბინები</option>
+                      <option value="986">სახლები და აგარაკები</option>
+                      <option value="987">კომერციული ფართები</option>
+                      <option value="988">მიწის ნაკვეთები</option>
+                      <option value="989">სასტუმროები</option>
+                    </select>
+                  </div>
+                </div>
+                <h3>ადგილმდებარეობა</h3>
+                <div>
+                  <label>* </span> ქალაქი / რაიონი: </label>
+                  <div>
+                    <select id="location_select" required="" name="params[selects][]">
+                      <option value=" ">ქალაქი / რაიონი</option>
+                      <optgroup label="თბილისი">
+                        <option value="990">გლდანი</option>
+                        <option value="991">ნაძალადევი</option>
+                        <option value="992">ისანი</option>
+                        <option value="993">სამგორი</option>
+                        <option value="994">დიდუბე</option>
+                        <option value="995">ჩუღურეთი</option>
+                        <option value="996">ვაკე</option>
+                        <option value="997">საბურთალო</option>
+                        <option value="998">კრწანისი</option>
+                        <option value="999">მთაწმინდა</option>
+                      </optgroup>
+                      <option value="530">ქუთაისი</option>
+                      <option value="531">ბათუმი</option>
+                      <option value="532">ცხინვალი</option>
+                      <option value="533">რუსთავი</option>
+                      <option value="534">ფოთი</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label>უბანი :</label>
+                  <div>
+                    <select id="location_urbans" name="params[selects][]">ხილიანი </option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label>* </span> მისამართი : </label>
+                  <div>
+                    <input required="" type="text" name="address">
+                  </div>
+                </div>
+                <div>
+                  <label>საკადასტრო კოდი :</label>
+                  <div>
+                    <input type="text" name="cadastral_code" value="">
+                  </div>
+                </div>
+                <div>
+                  <label>რუკის გამოჩენა :</label>
+                  <div>
+                    <div>
+                      <label>
+                        <input checked="" onclick="$('.map_overlay').removeClass('hidden');" name="show_map" value="0" type="radio"> არა </label> &nbsp; <label>
+                        <input onclick="$('.map_overlay').addClass('hidden');" name="show_map" type="radio" value="1"> კი </label>
+                    </div>
+                  </div>
+                </div>
+                <h3>დეტალური ინფორმაცია</h3>
+                <div>
+                  <label>* </span> სართული : </label>
+                  <div>
+                    <input type="text" required="" value="" name="floor_current">
+                  </div>
+                  <div>
+                    <label>
+                      <input type="checkbox" name="is_mansard"> სხვენი </label>
+                  </div>
+                </div>
+                <div>
+                  <label>* </span> სართულები სულ : </label>
+                  <div>
+                    <input type="text" required="" value="" name="floor_total">
+                  </div>
+                </div>
+                <div>
+                  <label>* </span> ოთახები : </label>
+                  <div>
+                    <input type="text" required="" name="rooms" value="">
+                  </div>
+                </div>
+                <div>
+                  <label>საძინებელი :</label>
+                  <div>
+                    <input type="text" name="bedrooms" value="">
+                  </div>
+                </div>
+                <div>
+                  <label>სველი წერტილი :</label>
+                  <div>
+                    <div>
+                      <label>
+                        <input name="toilet" checked="" value="1" type="radio"> 1 </label>
+                      <label>
+                        <input name="toilet" type="radio" value="2"> 2 </label> &nbsp; <label>
+                        <input name="toilet" type="radio" value="3"> 3+ </label> &nbsp; <label>
+                        <input name="toilet" type="radio" value="4"> საერთო </label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <label>ლოჯი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1156]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1156]" type="radio" value="1156"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>ვერანდა :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1155]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1155]" type="radio" value="1155"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>აივანი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1154]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1154]" type="radio" value="1154"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>ავეჯი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1153]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1153]" type="radio" value="1153"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>ბუხარი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1152]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1152]" type="radio" value="1152"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>ბუნებრივი აირი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1151]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1151]" type="radio" value="1151"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>ტელეფონი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1150]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1150]" type="radio" value="1150"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>ინტერნეტი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1149]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1149]" type="radio" value="1149"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>ტელევიზორი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1148]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1148]" type="radio" value="1148"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>კონდენციონერი :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1147]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1147]" type="radio" value="1147"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <label>სარეცხის მანქანა :</label>
+                        <div>
+                          <div>
+                            <label>
+                              <input checked="" name="params[home_add_filters][1157]" value="0" type="radio"> არა </label> &nbsp; <label>
+                              <input name="params[home_add_filters][1157]" type="radio" value="1157"> კი </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label>ცხელი წყალი :</label>
+                  <div>
+                    <select name="params[home_hot_water]">
+                      <option value="0">აირჩიეთ</option>
+                      <option value="1123">გაზის გამაცხელებელი</option>
+                      <option value="1124">ავზი</option>
+                      <option value="1125">დენის გამაცხელებელი</option>
+                      <option value="1126">ბუნებრივი ცხელი წყალი</option>
+                      <option value="1127">მზის გამათბობელი</option>
+                      <option value="1128">ცენტრალური გათბობა</option>
+                      <option value="1146">ცხელი წყალი</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label>გათბობა :</label>
+                  <div>
+                    <select name="params[home_heater]">
+                      <option value="0">აირჩიეთ</option>
+                      <option value="1129">ცენტრალური გათბობა</option>
+                      <option value="1130">გაზის გამათბობელი</option>
+                      <option value="1131">დენის გამათბობელი</option>
+                      <option value="1132">იატაკის გათბობა</option>
+                      <option value="1145">გათბობა</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label>პარკინგი :</label>
+                  <div>
+                    <select name="params[home_parking]">
+                      <option value="0">აირჩიეთ</option>
+                      <option value="1133">ავტოფარეხი</option>
+                      <option value="1134">პარკინგის ადგილი</option>
+                      <option value="1144">პარკინგი</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label>სათავსო :</label>
+                  <div>
+                    <select name="params[home_store]">
+                      <option value="0">აირჩიეთ</option>
+                      <option value="1135">სარდაფი</option>
+                      <option value="1136">სხვენი</option>
+                      <option value="1137">საკუჭნაო</option>
+                      <option value="1138">გარე სათავსო</option>
+                      <option value="1139">საერთო სათავსო</option>
+                      <option value="1143">სათავსო</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label>ლიფტი :</label>
+                  <div>
+                    <div id="home_lift">
+                      <label>
+                        <input type="checkbox" name="params[home_lift][]" value="1140"> სამგზავრო </label>
+                      <label>
+                        <input type="checkbox" name="params[home_lift][]" value="1141"> სატვირთო </label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label>ჭერის სიმაღლე (მეტრი) :</label>
+                  <div>
+                    <input name="ceiling_height" value="" type="text">
+                  </div>
+                </div>
+                <div>
+                  <label>მდგომარეობა :</label>
+                  <div>
+                    <select name="params[selects][]">
+                      <option value="1102">ახალი გარემონტებული</option>
+                      <option value="1103">მიმდინარე რემონტი</option>
+                      <option value="1104">ძველი გარემონტებული</option>
+                      <option value="1105">სარემონტო</option>
+                      <option value="1106">თეთრი კარკასი</option>
+                      <option value="1107">შავი კარკასი</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label>პროექტი :</label>
+                  <div>
+                    <select name="params[selects][]">
+                      <option value="1108">არასტანდარტული</option>
+                      <option value="1109">თუხარელის</option>
+                      <option value="1110">მოსკოვის</option>
+                      <option value="1111">ქალაქური</option>
+                      <option value="1112">ხრუშოვის</option>
+                      <option value="1113">ჩეხური</option>
+                      <option value="1114">ყავლაშვილის</option>
+                      <option value="1115">ლვოვის</option>
+                      <option value="1116">თბილისური ეზო</option>
+                    </select>
+                  </div>
+                </div>
+                <h3>დამატებითი ინფორმაცია</h3>
+                <div>
+                  <label>* </span> ტელეფონის ნომერი: </label>
+                  <div>
+                    <input type="text" name="mobile" required="" value="" placeholder="555123456">
+                  </div>
+                </div>
+                <div>
+                  <label>* </span> ფართი: </label>
+                  <div>
+                    <input name="total_square" required="" value="" type="text">
+                    <span style="font-size: 19px;">მ²</span>
+                  </div>
+                </div>
+                <div>
+                  <label>* </span> ფასი: </label>
+                  <div>
+                    <select name="price_type">
+                      <option selected="" value="0">საერთო ფასი</option>
+                      <option value="1">1 მ²-ის ფასი</option>
+                    </select>
+                  </div>
+                  <div>
+                    <input type="text" required="" value="" name="price">
+                  </div>
+                  <div>
+                    <select name="price_currency">
+                      <option value="3">ლარი</option>
+                      <option value="1">USD</option>
+                      <option value="2">ევრო</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <div>
+                          <img src="assets/frontend/img/geo.png" alt="ქართული">
+                        </div>
+                        <div>
+                          <img src="assets/frontend/img/english.png" alt="English">
+                        </div>
+                        <div>
+                          <img src="assets/frontend/img/russian.png" alt="Русский">
+                        </div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label>* </span> დასახელება(სათაური) : </label>
+                    <div>
+                      <input type="text" name="title[ka][]" value="" required="" maxlength="60" placeholder="მაგ: იყიდება 2 ოთახიანი ბინა">
+                    </div>
+                  </div>
+                  <div>
+                    <label>კომენტარი :</label>
+                    <div>
+                      <textarea name="comment[ka][]"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label>* </span> დასახელება(სათაური) : </label>
+                    <div>
+                      <input type="text" name="title[en][]" value="" maxlength="60" placeholder="მაგ: იყიდება 2 ოთახიანი ბინა">
+                    </div>
+                  </div>
+                  <div>
+                    <label>კომენტარი :</label>
+                    <div>
+                      <textarea name="comment[en][]"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <label>* </span> დასახელება(სათაური) : </label>
+                    <div>
+                      <input type="text" name="title[ru][]" value="" maxlength="60" placeholder="მაგ: იყიდება 2 ოთახიანი ბინა">
+                    </div>
+                  </div>
+                  <div>
+                    <label>კომენტარი :</label>
+                    <div>
+                      <textarea name="comment[ru][]"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label>რეესტრის ამონაწერის ბმული:</label>
+                  <div>
+                    <input type="text" name="sda_link" value="">
+                  </div>
+                </div>
+                <div>
+                  <label>ვიდეოს ბმული:</label>
+                  <div>
+                    <input type="text" name="video_link" value="">
+                  </div>
+                </div>
+                <h3>სურათები</h3>
+                <div>
+                  <div>
+                    <div role="presentation" style="background-color:#ccc; border-radius:4px; margin-bottom:4px;"></div>
+                    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                    <div>
+                      <div>
+                        <span>
+                          <i></i>
+                          <span>სურათების დამატება</span>
+                          <input type="file" name="files[]" multiple="">
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <i></i>
+                        <label style="margin-left: 33px;margin-top: 5px;font-family: 'bpg_rioni';">
+                          <input type="checkbox" name="is_addaptived" value="1"> სსმპ ადაპტირებული </label>
+                      </div>
+                      <div>
+                        <i></i>
+                        <span>მონიშნეთ ჩეკბოქსი თუ უძრავი ქონება განკუთვნილია ან ადაპტირებულია სპეციალური საჭიროების მქონე პირებისთვის</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <button type="submit">
+                      <i></i> შენახვა </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+    </body>
+</html>
