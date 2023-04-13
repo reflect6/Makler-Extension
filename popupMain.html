@@ -3,23 +3,37 @@
   <head>
     <meta charset="UTF-8">
     <title>My Chrome Extension</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <script src="popupMain.js"></script>
     <link rel="stylesheet" href="popupMain.css">
   </head>
   <body>
-    <h1>სისტემაში შესვლა</h1>
-    <form id="login-form">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      <br>
-      <button type="submit">Login</button>
-    </form>
-    <div id="checkmark"></div>
-    <div id="crossmark"></div>
-    <div id="spinner"></div>
+    <div id="loading-container">
+      <img src="loading.gif" id="loading-container-gif">
+    </div>
+    <div id="custom-alert">
+      <div class="message"></div>
+      <button class="ok-button" id=""ok-button"">OK</button>
+    </div>
+    
+    <div class="login-box" id="login-box">
+      <h2>სისტემაში შესვლა</h2>
+      <form id="login-form">
+        <div class="user-box">
+          <input type="email" name="email" id="email" required>
+          <label>ელ.ფოსტა</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="" required="" id="password">
+          <label>პაროლი</label>
+        </div>
+        <a href="#" class="login-button">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          შესვლა
+        </a>
+      </form>
+    </div>
   </body>
 </html>
